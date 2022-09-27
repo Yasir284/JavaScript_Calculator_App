@@ -44,9 +44,10 @@ form {
 }
 
 .textView {
+  text-align: right;
+  text-overflow: clip;
   max-width: 20rem;
   height: 4rem;
-  text-align: right;
   border: 5px solid #030202;
   background-color: #56c3c3;
   border-radius: 10px;
