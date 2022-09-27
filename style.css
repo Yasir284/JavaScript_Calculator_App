@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&family=Titan+One&display=swap");
+
+* {
+  font-family: "Titan One";
+  color: #030202;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: url(1.jpg), repeat; */
+  background: #f1ceda;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.main {
+  background-color: #1e87c9;
+  border-radius: 40px;
+  border: 10px solid #030202;
+  box-shadow: 35px 18px 5px rgba(3, 2, 2, 0.514);
+}
+
+.calculator {
+  background-color: #096cb5;
+  border-radius: 45px;
+  border-top: 20px solid #1e87c9;
+  border-bottom: 20px solid #1e87c9;
+  border-left: 18px solid #1e87c9;
+  border-right: 18px solid #1e87c9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form {
+  margin: 20px 20px 8px;
+  border-radius: 10px;
+}
+
+.textView {
+  max-width: 20rem;
+  height: 4rem;
+  text-align: right;
+  border: 5px solid #030202;
+  background-color: #56c3c3;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  box-shadow: inset 10px 10px #409b93, 5px 5px 5px rgba(3, 2, 2, 0.514);
+}
+
+table {
+  empty-cells: show;
+  width: 90%;
+  text-align: right;
+}
+
+.btn {
+  margin: 5px;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 5px solid #030202;
+  border-radius: 10px;
+  box-shadow: inset 10px 10px rgba(179, 179, 179, 0.644),
+    5px 5px 5px rgba(3, 2, 2, 0.514);
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:active {
+  transform: scale(0.9);
+  box-shadow: inset 10px 10px rgba(178, 178, 178, 0.644),
+    1px 1px 1px rgba(3, 2, 2, 0.514);
+}
+
+.btn.clearBtn {
+  background-color: #d93d2b;
+  box-shadow: inset 10px 10px rgba(180, 22, 27, 0.664),
+    5px 5px 5px rgba(3, 2, 2, 0.514);
+}
+
+.btn.clearBtn:active {
+  transform: scale(0.9);
+  box-shadow: inset 10px 10px rgba(180, 22, 27, 0.664),
+    1px 1px 1px rgba(3, 2, 2, 0.514);
+}
+
+.btn.backBtn {
+  background-color: #ffff00;
+  box-shadow: inset 10px 10px rgb(230, 179, 37, 0.644),
+    5px 5px 5px rgba(3, 2, 2, 0.514);
+}
