@@ -23,7 +23,7 @@ function clearCalc() {
   textView.value = "";
 }
 
-let solve = {
+let operation = {
   "/": function (x, y) {
     return x / y;
   },
@@ -49,23 +49,34 @@ function getOperatorIndex(text, operator) {
 }
 
 function equals() {
-  let text = textView.value.split(" ");
-  let operators = ["/", "*", "+", "-"];
-  for (operator of operators) {
-    if (text.includes(operator)) {
-      let index = getOperatorIndex(text, operator);
-      while (index.length > 0) {
-        let leftIndex = index[0] - 1;
-        let rightIndex = index[0] + 1;
-        let left = parseInt(text[leftIndex]);
-        let right = parseInt(text[rightIndex]);
-        let evaluate = solve[operator](left, right); //4
-        text.splice(leftIndex, 3, evaluate);
-        index = getOperatorIndex(text, operator);
-      }
+  let numbers = textView.value.split(" ").filter((item) => !isNaN(item));
+  let operators = textView.value.split(" ").filter((item) => isNaN(item));
+  let allOperators = ["/", "*", "+", "-"];
+
+  for (ourOperator of allOperators) {
+    while (operators.includes(ourOperator)) {
+      const index = operators.indexOf(ourOperator);
+      const answer = operation[ourOperator](
+        Number(numbers[index]),
+        Number(numbers[index + 1])
+      );
+      numbers.splice(index, 2, answer);
+      operators.splice(index, 1);
     }
   }
-  console.log(text.join(""));
-  return (textView.value = text.join(""));
+  console.log(numbers.join(""));
+  return (textView.value = numbers.join(""));
 }
-equals();
+// 22 + 5 + 12 / 2 / 2 + 1
+// if (text.includes(operator)) {
+//   let index = getOperatorIndex(text, operator);
+//   while (index.length > 0) {
+//     let leftIndex = index[0] - 1;
+//     let rightIndex = index[0] + 1;
+//     let left = parseInt(text[leftIndex]);
+//     let right = parseInt(text[rightIndex]);
+//     let evaluate = operation[operator](left, right); //4
+//     text.splice(leftIndex, 3, evaluate);
+//     index = getOperatorIndex(text, operator);
+//   }
+// }
