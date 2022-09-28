@@ -28,7 +28,7 @@
 
 ## 🎥 Working
 
-![Gif](./js_project7.gif)
+![Gif](./javascript_project1_calculator_app_AdobeExpress.gif)
 
 ---
 

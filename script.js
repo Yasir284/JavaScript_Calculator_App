@@ -68,15 +68,14 @@ function equals() {
       while (index.length > 0) {
         let leftIndex = index[0] - 1;
         let rightIndex = index[0] + 1;
-        let left = parseInt(text[leftIndex]);
-        let right = parseInt(text[rightIndex]);
+        let left = Number(text[leftIndex]);
+        let right = Number(text[rightIndex]);
         let evaluate = operation[operator](left, right);
         text.splice(leftIndex, 3, evaluate);
         index = getOperatorIndex(text, operator);
       }
     }
   }
-  console.log(text.join(""));
   return (textView.value = text.join(""));
 }
 
